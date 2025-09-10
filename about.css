@@ -1,0 +1,113 @@
+.about-container {
+    padding: 80px 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at top right,
+        rgba(0, 149, 255, 0.1) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.about-container h1 {
+    font-size: 3rem;
+    color: #8a2be2;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: opacity, transform;
+}
+
+section.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.achievement-cards, .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card, .brand-card {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(0, 149, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 10px 25px rgba(0, 149, 255, 0.15);
+    border: 1px solid rgba(0, 149, 255, 0.2);
+}
+
+.benefits ul {
+    list-style-position: inside;
+    margin-top: 15px;
+}
+
+.benefits li {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 10px 0;
+}
+
+.about-intro h2,
+.achievements h2,
+.kukkiwon-status h2,
+.powerbrands h2 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-intro p,
+.card p,
+.brand-card p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+h3 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-cards, .brand-grid {
+        grid-template-columns: 1fr;
+    }
+}

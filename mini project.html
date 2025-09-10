@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Belt Grade Examination Form – JSTARC</title>
+<style>
+  :root{
+    --fg:#111;
+    --muted:#444;
+    --line:#bbb;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:#f4f5f7;
+    color:var(--fg);
+    font:14px/1.35 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .page{
+    width:210mm;              /* A4 width */
+    min-height:297mm;         /* A4 height */
+    margin:16px auto;
+    background:#fff;
+    padding:22mm 18mm;
+    border:1px solid #e5e7eb;
+  }
+  header{
+    text-align:center;
+    margin-bottom:10mm;
+  }
+  .brand{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin-bottom:6px;
+  }
+  .brand .logo{
+    width:42px; height:42px; border:1px solid var(--line); display:grid; place-items:center; font-weight:700;
+  }
+  h1{
+    font-size:16px; margin:0 0 2px 0; letter-spacing:.2px;
+  }
+  .sub{
+    font-size:12px; color:var(--muted); margin:0 0 6px 0;
+  }
+  a{ color:#0b63bd; text-decoration:none; }
+  .row{
+    display:flex; justify-content:space-between; gap:12px; align-items:flex-end;
+    margin-top:6px;
+  }
+  .row .left{ font-size:13px; }
+  label.small{ font-size:12px; color:var(--muted); margin-right:6px; }
+  input[type="text"], input[type="date"], input[type="number"]{
+    width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:6px;
+    font:inherit;
+  }
+  table{
+    width:100%; border-collapse:collapse; margin-top:10px;
+  }
+  th, td{
+    border:1px solid var(--line); padding:8px; vertical-align:top;
+  }
+  th{ background:#f6f7f9; text-align:left; font-weight:600; }
+  .section-title{
+    text-align:center; font-weight:700; margin:14px 0 6px;
+  }
+  ol{ margin:6px 0 0 18px; }
+  .signatures{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px;
+  }
+  .sig{
+    text-align:center; padding-top:26px; border-top:1px solid var(--line);
+  }
+  .sig-row2{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px;
+  }
+  .controls{
+    position:sticky; top:0; background:#111827; color:#fff;
+    display:flex; gap:8px; justify-content:center; padding:10px; z-index:10;
+  }
+  .btn{
+    appearance:none; border:0; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600;
+  }
+  .btn.primary{ background:#22c55e; color:#053315; }
+  .btn.outline{ background:#fff; color:#111; border:1px solid #d1d5db; }
+  .muted{ color:var(--muted); }
+
+  /* Print styles */
+  @media print{
+    body{ background:#fff; }
+    .page{ margin:0; border:0; padding:0; width:auto; min-height:auto; }
+    .controls{ display:none !important; }
+    a{ color:inherit; text-decoration:none; }
+    input, textarea{ border:0; border-bottom:1px solid var(--line); border-radius:0; padding:2px 0; }
+    th{ background:#f0f0f0 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top action bar (won't print) -->
+<div class="controls">
+  <button class="btn primary" onclick="window.print()">Print</button>
+  <button class="btn outline" onclick="clearForm()">Clear form</button>
+  <span class="muted">Tip: fill the fields, then click Print to save as PDF.</span>
+</div>
+
+<div class="page" id="page">
+  <header>
+    <div class="brand">
+      <div class="logo">J</div>
+      <div>
+        <h1>JALNAWALLA’S SPORTS TRAINING &amp; RESEARCH CENTER</h1>
+        <div class="sub">Affiliated to K-Tiger’s – S Korea</div>
+      </div>
+    </div>
+    <div class="sub">
+      Regd Off: Hennur Cross, Opp to Indian Academic PUC College, Bangalore – 43<br />
+      <strong>Branch Off:</strong> Vashi, Navi Mumbai<br />
+      <a href="https://www.jalnawalla.com">www.jalnawalla.com</a>
+    </div>
+    <h2 style="font-size:16px; text-decoration:underline; margin:8px 0 0 0;">Belt Grade Examination Form</h2>
+  </header>
+
+  <div class="row">
+    <div class="left">To<br/>Secretary General<br/>JSTARC</div>
+    <div>
+      <label class="small" for="date">Date:&nbsp;</label>
+      <input id="date" name="date" type="date"/>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <th style="width:42%">Belt Grade Applied For</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Present Belt Grade</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Name (Block Letter)</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Date of Birth</th>
+      <td><input type="date" /></td>
+    </tr>
+    <tr>
+      <th>Occupation</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Taekwondo Center Name</th>
+      <td><input type="text" /></td>
+    </tr>
+    <tr>
+      <th>Period of Training</th>
+      <td><input type="text" placeholder="e.g., Jan 2023 – Mar 2025 (26 months)" /></td>
+    </tr>
+    <tr>
+      <th>Date of Examination</th>
+      <td><input type="date" /></td>
+    </tr>
+    <tr>
+      <th>Instructor’s Name</th>
+      <td><input type="text" /></td>
+    </tr>
+  </table>
+
+  <div class="section-title">Office Use Only (Marks)</div>
+  <table id="marks">
+    <thead>
+      <tr>
+        <th>Hand technique <span class="muted">(10)</span></th>
+        <th>Leg techniques <span class="muted">(10)</span></th>
+        <th>Poomsae <span class="muted">(40)</span></th>
+        <th>Sparring <span class="muted">(10)</span></th>
+        <th>Breaking <span class="muted">(10)</span></th>
+        <th>Flexibility <span class="muted">(20)</span></th>
+        <th>Total <span class="muted">(100)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="number" min="0" max="10" step="1" oninput="recalc()" /></td>
+        <td><input type="number" min="0" max="10" step="1" oninput="recalc()" /></td>
+        <td><input type="number" min="0" max="40" step="1" oninput="recalc()" /></td>
+        <td><input type="number" min="0" max="10" step="1" oninput="recalc()" /></td>
+        <td><input type="number" min="0" max="10" step="1" oninput="recalc()" /></td>
+        <td><input type="number" min="0" max="20" step="1" oninput="recalc()" /></td>
+        <td><input type="number" id="total" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">I will abide by the following rules.</div>
+  <ol>
+    <li>Examinee should be dressed in neat and clean Taekwondo Uniform.</li>
+    <li>Strict discipline should be maintained during examination.</li>
+    <li>The Association/Examiner will not be responsible for any injuries/mishaps incurred by examinee during examination.</li>
+  </ol>
+
+  <div class="signatures">
+    <div class="sig">Signature of Parent</div>
+    <div class="sig">Signature of Examinee</div>
+    <div class="sig">Signature of Instructor</div>
+  </div>
+  <div class="sig-row2">
+    <div class="sig">Signature of Examiner</div>
+    <div class="sig">Signature of Secretary General (JSTARC)</div>
+  </div>
+</div>
+
+<script>
+  // Set today's date in the "Date" field if empty
+  (function initToday(){
+    const d = document.getElementById('date');
+    if(!d.value){
+      const now = new Date(), m = String(now.getMonth()+1).padStart(2,'0'), day = String(now.getDate()).padStart(2,'0');
+      d.value = `${now.getFullYear()}-${m}-${day}`;
+    }
+  })();
+
+  // Recalculate total marks
+  function recalc(){
+    const inputs = document.querySelectorAll('#marks tbody input[type="number"]:not(#total)');
+    let sum = 0;
+    inputs.forEach(i => sum += Number(i.value || 0));
+    document.getElementById('total').value = sum;
+  }
+
+  // Clear all inputs
+  function clearForm(){
+    document.querySelectorAll('input').forEach(el=>{
+      if(el.type === 'date' || el.type === 'text' || el.type === 'number'){ el.value = ''; }
+    });
+    recalc();
+  }
+</script>
+</body>
+</html>
